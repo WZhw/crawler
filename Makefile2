@@ -1,0 +1,8 @@
+CC = g++
+CFLAGS = -O3 -march=native -Wall -g
+crawler2: crawler2.o
+	$(CC) -o $@ $< -levent
+	cp crawler2 ./bin/Debug/crawler
+crawler2.o: crawler2.c bloom2.h http2.h
+clean:
+	-rm crawler2.o crawler2 pagecrawler/* ./bin/Debug/crawler ./bin/Debug/crawler2
